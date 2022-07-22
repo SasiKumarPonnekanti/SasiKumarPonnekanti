@@ -16,8 +16,8 @@ StaffLogic nurseLogic = new NurseLogic();
 StaffLogic technicianLogic = new TechnicianLogic();
 
 doctorLogic.staff.Add(doctor);
-doctorLogic.staff.Add(nurse);
-doctorLogic.staff.Add(technician);
+nurseLogic.staff.Add(nurse);
+technicianLogic.staff.Add(technician);
 
 foreach(Staff staff in doctorLogic.staff)
 {

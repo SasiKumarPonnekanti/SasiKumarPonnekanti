@@ -9,9 +9,20 @@ namespace ConsoleApp2.Logic
 {
     public abstract class StaffLogic
     {
-        public  List<Staff> staff = new List<Staff>();
-        public abstract int GetGroddIncome();
-        public abstract int GetTax();
-        public abstract int GetNetIncome();
+        public List<Staff> staff = new List<Staff>();
+        public abstract void create();
+
+        public abstract void Update();
+        
+        public abstract void Delete();
+        
+        public abstract void getall();
+
+         public abstract void GetbyId();
+        
+       
+        public abstract int GetGroddIncome(Staff s);
+        public abstract int GetTax(Staff s);
+        public abstract int GetNetIncome(Staff s);
     }
 }
