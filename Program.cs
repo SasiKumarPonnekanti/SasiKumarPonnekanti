@@ -15,18 +15,7 @@ StaffLogic doctorLogic = new DoctorLogic();
 StaffLogic nurseLogic = new NurseLogic();
 StaffLogic technicianLogic = new TechnicianLogic();
 
-doctorLogic.staff.Add(doctor);
-nurseLogic.staff.Add(nurse);
-technicianLogic.staff.Add(technician);
-
-foreach(Staff staff in doctorLogic.staff)
-{
-    Console.WriteLine(staff.StaffName);
-}
 
 
 
-Accounts ac = new Accounts();
-Console.WriteLine($"{ac.CalculateIncome(doctorLogic)}");
-Console.WriteLine($"{ac.CalculateIncome(nurseLogic)}");
-Console.WriteLine($"{ac.CalculateIncome(technicianLogic)}");
+

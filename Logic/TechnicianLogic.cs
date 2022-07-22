@@ -9,24 +9,56 @@ namespace ConsoleApp2.Logic
 {
     internal class TechnicianLogic : StaffLogic
     {
-        public void create()
+       
+        public override void create(Staff technician)
         {
+            staffList.Add(technician);
+        }
+        public override void Update(Staff technician,int id)
+        {
+            foreach(Staff item in staffList)
+            {
+                if (item.StaffId == id)
+                {
+                    item.StaffName = technician.StaffName;
+                    item.ContactNo = technician.ContactNo;
+                    //Complte for remaining Propertires
+                }
+            }
+        }
+        public override void Delete(int id)
+        {
+            foreach (Staff item in staffList)
+            {
+                if (item.StaffId == id)
+                {
+                    staffList.Remove(item);
+                }
+            }
 
         }
-        public void Update()
+        public override List<Staff> getall()
         {
-
+            List<Staff> technicianList = new List<Staff>();
+            foreach(Staff item in staffList)
+            {
+                if(item.GetType() == typeof(Technician))
+                {
+                    technicianList.Add(item);
+                }
+            }
+            return technicianList;
         }
-        public void Delete()
+        public override Staff GetbyId(int id)
         {
-
-        }
-        public void getall()
-        {
-
-        }
-        public void GetbyId()
-        {
+            foreach (Staff item in staffList)
+            {
+                if (item.StaffId == id&&item.GetType()==typeof(Technician))
+                {
+                    return item;
+                }
+            }
+            return null;
 
         }
         public override int GetGroddIncome(Staff s)

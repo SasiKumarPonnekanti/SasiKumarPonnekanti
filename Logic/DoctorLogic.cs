@@ -9,25 +9,25 @@ namespace ConsoleApp2.Logic
 {
     internal class DoctorLogic : StaffLogic
     {
-        public void create ()
+        public override void create (Staff doctor)
         {
 
         }
-        public void Update()
+        public override void Update(Staff doctor,int id)
         {
 
         }
-        public void Delete()
+        public override void Delete(int id)
         {
 
         }
-        public void getall()
+        public override List<Staff> getall()
         {
-
+            return null;
         }
-        public void GetbyId()
+        public override Staff GetbyId(int id)
         {
-
+            return null;
         }
         public override int GetGroddIncome(Staff s)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApp2.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ namespace ConsoleApp2.Logic
 {
     public class Accounts
     {
-        public int CalculateIncome(StaffLogic staffLogic)
+        public int CalculateIncome(Staff s)
         {
-            return staffLogic.GetNetIncome();
+            return 0;//staffLogic.GetNetIncome(Staff s);
         }
     }
 }
