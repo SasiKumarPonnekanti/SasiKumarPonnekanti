@@ -61,7 +61,7 @@ namespace ConsoleApp2.Logic
             return null;
 
         }
-        public override int GetGroddIncome(Staff s)
+        public new int GetGroddIncome(Staff s)
         {
             Console.WriteLine("Get Technician GroddIncome");
             return 0;
@@ -73,7 +73,7 @@ namespace ConsoleApp2.Logic
             return 0;
         }
 
-        public override int GetTax(Staff s)
+        public new int GetTax(Staff s)
         {
             Console.WriteLine("Get Technician Tax");
             return 0;

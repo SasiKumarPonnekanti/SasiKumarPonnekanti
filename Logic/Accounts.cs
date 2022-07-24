@@ -9,9 +9,9 @@ namespace ConsoleApp2.Logic
 {
     public class Accounts
     {
-        public int CalculateIncome(Staff s)
+        public int CalculateIncome(StaffLogic staffLogic,Staff s)
         {
-            return 0;//staffLogic.GetNetIncome(Staff s);
+            return staffLogic.GetNetIncome(s);
         }
     }
 }

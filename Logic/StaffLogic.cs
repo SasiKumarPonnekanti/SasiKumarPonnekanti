@@ -9,7 +9,7 @@ namespace ConsoleApp2.Logic
 {
     public abstract class StaffLogic
     {
-        public List<Staff> staffList = new List<Staff>();
+        public static List<Staff> staffList = new List<Staff>();
         public abstract void create(Staff staff);
 
         public abstract void Update(Staff staff,int id);
@@ -21,8 +21,16 @@ namespace ConsoleApp2.Logic
          public abstract Staff GetbyId(int id);
         
        
-        public abstract int GetGroddIncome(Staff s);
-        public abstract int GetTax(Staff s);
+        public virtual int GetGroddIncome(Staff s)
+        {
+            return 1000;
+        }
+       
+        public virtual int GetTax(Staff s)
+        {
+            return 1000;
+        }
         public abstract int GetNetIncome(Staff s);
+       
     }
 }

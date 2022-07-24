@@ -11,7 +11,7 @@ namespace ConsoleApp2.Logic
     {
         public override void create(Staff nurse)
         {
-
+            staffList.Add(nurse);
         }
         public override void Update(Staff nurse,int id)
         {
