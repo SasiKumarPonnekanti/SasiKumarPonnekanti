@@ -10,6 +10,8 @@ namespace ConsoleApp2.Logic
     public abstract class StaffLogic
     {
         public static List<Staff> staffList = new List<Staff>();
+
+        public static Dictionary<int, Staff> staffDictionary = new Dictionary<int, Staff>();  
         public abstract void create(Staff staff);
 
         public abstract void Update(Staff staff,int id);

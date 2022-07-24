@@ -9,6 +9,38 @@ namespace ConsoleApp2.Logic
 {
     internal class DoctorLogic : StaffLogic
     {
+
+        public void createwithDict(Staff doctor)
+        {
+            staffDictionary.Add(doctor.StaffId, doctor);
+        }
+
+        public void UpdateDict(Staff doctor,int id)
+        {
+            staffDictionary[id].Email = doctor.Email;
+            //other properties
+        }
+
+        public void DeleteWithDict(int id)
+        {
+            staffDictionary.Remove(id);
+        }
+        public Staff GetByid(int id)
+        {
+            return staffDictionary[id];
+        }
+        public List<Staff> GetAll()
+        {
+            List<Staff> doctors = new List<Staff>();
+            foreach(KeyValuePair<int,Staff> kvp in staffDictionary)
+            {
+                if(kvp.Value.GetType()== typeof(Doctor))
+                {
+                    doctors.Add(kvp.Value);
+                }
+            }
+            return doctors;
+        }
         public override void create (Staff doctor)
         {
             staffList.Add(doctor);
