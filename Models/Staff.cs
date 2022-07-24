@@ -15,6 +15,6 @@ namespace ConsoleApp2.Models
         public string? Education { get; set; }
         public int ShiftStartTime { get; set; }
         public int ShiftEndTime { get; set; }
-        protected int BasicPay { get; set; }
+        public int BasicPay { get; set; }
     }
 }

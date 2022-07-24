@@ -61,22 +61,25 @@ namespace ConsoleApp2.Logic
             return null;
 
         }
-        public new int GetGroddIncome(Staff s)
+        public new double GetGroddIncome(Staff s)
         {
-            Console.WriteLine("Get Technician GroddIncome");
-            return 0;
+
+            Technician technician = (Technician)s;
+            return (technician.incentiveAmount+technician.BasicPay+technician.RepairFee)*12;
         }
 
-        public override int GetNetIncome(Staff s)
+        public override double GetNetIncome(Staff s)
         {
-            Console.WriteLine("Get Technician income");
-            return 0;
+            Technician technician = (Technician)s;
+            return ((technician.incentiveAmount + technician.BasicPay + technician.RepairFee) * 12)-((technician.BasicPay) * 12 * 0.01 * technician.TaxPercentage);
+            
         }
 
-        public new int GetTax(Staff s)
+        public new double GetTax(Staff s)
         {
-            Console.WriteLine("Get Technician Tax");
-            return 0;
+            Technician technician = (Technician)s;
+            return (technician.BasicPay) * 12 * 0.01 * technician.TaxPercentage;
+           
         }
     }
 }

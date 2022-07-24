@@ -29,22 +29,24 @@ namespace ConsoleApp2.Logic
         {
             return null;
         }
-        public override int GetGroddIncome(Staff s)
+        public override double GetGroddIncome(Staff s)
         {
-            Console.WriteLine("Get Doctor GroddIncome");
-            return 0;
+            Doctor doctor = (Doctor)s;
+            return ((doctor.BasicPay + doctor.incentiveAmount) * 12) + doctor.ResearchPay;
+            
         }
 
-        public override int GetNetIncome(Staff s)
+        public override double GetNetIncome(Staff s)
         {
-            Console.WriteLine("Get Doctor NetIncome");
-            return 0;
+            Doctor doctor = (Doctor)s;
+            return (((doctor.BasicPay + doctor.incentiveAmount) * 12) + doctor.ResearchPay)-(doctor.BasicPay*doctor.taxPercentage*0.01);
+           
         }
 
-        public override int GetTax(Staff s)
+        public override double GetTax(Staff s)
         {
-            Console.WriteLine("Get Doctor Tax");
-            return 0;
+            Doctor doctor = (Doctor)s;
+            return (doctor.BasicPay * doctor.taxPercentage * 0.01);
         }
     }
 }

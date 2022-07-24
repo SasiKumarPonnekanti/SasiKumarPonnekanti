@@ -30,22 +30,23 @@ namespace ConsoleApp2.Logic
             return null;
         }
 
-        public override int GetGroddIncome(Staff s)
+        public override double GetGroddIncome(Staff s)
         {
-            Console.WriteLine("Get Nurse GroddIncome");
-            return 0;
+            Nurse nurse = (Nurse)s;
+            return (nurse.BasicPay + nurse.DressAllowence + nurse.incentiveAmount) * 12; 
         }
 
-        public override int GetNetIncome(Staff s)
+        public override double GetNetIncome(Staff s)
         {
-            Console.WriteLine("Get Nurse NetIncome");
-            return 0;
+            Nurse nurse = (Nurse)s;
+            return ((nurse.BasicPay + nurse.DressAllowence + nurse.incentiveAmount) * 12)-(nurse.BasicPay*12*nurse.Taxpercentage);
         }
 
-        public override int GetTax(Staff s)
+        public override double GetTax(Staff s)
         {
-            Console.WriteLine("Get Nurse Tax");
-            return 0;
+            Nurse nurse = (Nurse)s;
+            return nurse.BasicPay * 12 * nurse.Taxpercentage;
+            
         }
     }
 }

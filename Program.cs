@@ -4,10 +4,10 @@ using ConsoleApp2.Logic;
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-Staff nandu = new Staff() { StaffName="NanduStaff"};
-Staff sasi = new Doctor() { StaffName="SasiDoctor"};
-Staff naveen = new Technician() { StaffName="naveenTech"};
-Staff Ravi = new Nurse() { StaffName="raviNurse"};
+
+Staff sasi = new Doctor() { StaffName="SasiDoctor",BasicPay= 28000,ResearchPay=23000};
+Staff naveen = new Technician() { StaffName="naveenTech",BasicPay=12000,RepairFee=2300};
+Staff Ravi = new Nurse() { StaffName="raviNurse",BasicPay=18000};
 Staff brahma = new Doctor() { StaffName = "brahmaDoctor" };
 Staff Harish = new Technician() { StaffName = "HarishTech" };
 Staff Sai = new Nurse() { StaffName = "SaiNurse" };
@@ -23,7 +23,7 @@ nurseLogic.create(Ravi);
 doctorLogic.create(brahma);
 technicianLogic.create(Harish);
 nurseLogic.create(Sai);
-StaffLogic.staffList.Add(nandu);
+
 foreach(Staff s in StaffLogic.staffList)
 {
     Console.WriteLine(s.StaffName);
@@ -75,17 +75,18 @@ foreach (Staff s in StaffLogic.staffList)
             
             case "Nurse":
                 staff = new NurseLogic();
-                A.CalculateIncome(staff, s);
+                Console.WriteLine($"Income is {A.CalculateIncome(staff, s)}  Per Year");
                 Console.WriteLine("Nurse");
                 break;
             case "Doctor":
                 staff = new DoctorLogic();
-                A.CalculateIncome(staff, s);
+                
+                Console.WriteLine($"Income is {A.CalculateIncome(staff, s)}  Per Year");
                 Console.WriteLine("Doctor");
                 break;
             case "Technician":
                 staff = new TechnicianLogic();
-                A.CalculateIncome(staff, s);
+                Console.WriteLine($"Income is {A.CalculateIncome(staff, s)}  Per Year");
                 Console.WriteLine("Technician");
                 break;
         }

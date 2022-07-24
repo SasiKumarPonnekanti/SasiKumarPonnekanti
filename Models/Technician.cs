@@ -9,6 +9,9 @@ namespace ConsoleApp2.Models
     public class Technician:Staff
     {
         public string MachineName { get; set; }
-       public int TaxPercentage { get; } 
+
+        public int RepairFee { get; set; }  
+        public int incentiveAmount { get; } = 3000;
+        public int TaxPercentage { get; } = 2; 
     }
 }

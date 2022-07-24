@@ -21,16 +21,16 @@ namespace ConsoleApp2.Logic
          public abstract Staff GetbyId(int id);
         
        
-        public virtual int GetGroddIncome(Staff s)
+        public virtual double GetGroddIncome(Staff s)
         {
             return 1000;
         }
        
-        public virtual int GetTax(Staff s)
+        public virtual double GetTax(Staff s)
         {
             return 1000;
         }
-        public abstract int GetNetIncome(Staff s);
+        public abstract double GetNetIncome(Staff s);
        
     }
 }
